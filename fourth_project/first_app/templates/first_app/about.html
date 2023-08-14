@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load first_Tag %}
+{% load first_Tag %}
+{% block title%} About PAGE{% endblock%}
+
+{% block content %} {{ block.super }} This is a About page
+<h1>{{author}}</h1>
+
+<h1>{{author|change_name:'change'}}</h1>
+<h1>{{author|change_name:'title'}}</h1>
+
+
+{% show_courses %}
+{%endblock%}
+
+

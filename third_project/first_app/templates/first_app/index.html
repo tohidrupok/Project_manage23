@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<link>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/second.css' %}">
+    
+</head>
+<body>
+    <h1>We are inside first app</h1>
+    <h1>Autonname: {{ name }}</h1>
+    <img src="{% static 'images/rupok.jpeg' %}" alt="This pic">
+
+    {% comment %} {% if marks >= 90 %}
+    <p>Tmi miya pro 90+</p>
+    {% elif marks >= 80 %}
+    <p>Tmi miya A+</p>
+    {% elif marks >= 60 %}
+    <p>Tmi miya A</p>
+    {% elif marks >= 33 %}
+    <p>Tmi miya pass</p>
+    {% else %}
+    <p>tmi miya fail. jaw </p>
+    {% endif %} {% endcomment %}
+
+    <table border="3",width=1900>
+        <tr>
+            <th>ID</th>
+            <th>Course</th>
+            <th>Teacher</th>
+        </tr>
+        {% for i in courses %}
+        <tr>
+          <td>{{i.id}}</td>
+          <td>{{i.course}}</td>
+          <td>{{i.teacher}}</td>
+          </tr>
+        {% endfor %}
+
+    </table>
+
+    <h1>{{marks | add:"2"}}</h1>
+    <h1>{{marks | divisibleby:"2"}}</h1>
+    <h1>{{name | length}}</h1>
+    <h1>{{name | upper}}</h1>
+    <h1>{{name | lower}}</h1>
+    <h1>{{blog | make_list}}</h1>
+    <h1>{{name | wordcount}}</h1>
+    <h1>{{blog | truncatewords:5}}</h1>
+    <h1>{{blog | truncatechars:50}}</h1>
+    <h1>{{lst | join:', '}}</h1>
+    
+
+
+    
+
+
+
+</body>
+</html>
