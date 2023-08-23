@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block content%}
+
+
+
+<div style="width:80%;margin : auto;">
+    <h1>List of Books</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">Book Name</th>
+        {% comment %} <th scope="col">Author Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">First Publicaiton</th>
+        <th scope="col">Last Publicaiton</th>
+        <th scope="col">Action</th>  {% endcomment %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in data %}
+      <tr>
+        <td>{{item.id}}</td>
+        <td><a href="{% url 'book_details' item.id %}">{{item.book_name}}</a><td>
+        {% comment %} <td>{{item.author}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.first_pub}}</td>
+        <td>{{item.last_pub}}</td> {% endcomment %}
+        {% comment %} <td> <a href="{% url 'edit_book ' id=item.id %}" class='btn btn-warning btn-sm '>Edit</a > <a  class='btn btn-danger btn-sm '>Delet</a> </td> {% endcomment %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+</div>
+
+{% endblock %}      
